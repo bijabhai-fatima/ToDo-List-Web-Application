@@ -12,9 +12,12 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.App-description{
+  color: black;
+  display: inline;
+}
 .App-header {
-  background-color: #282c34;
+  background-color: #e7e8ea;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +38,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.the-box {
+  background-color: #25375a;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  padding: 4rem; 
+}
+.the-box-content{ 
+  justify-content: center;
+  padding: 2rem;
+} 
+.the-box-buttons{
+  display: inline;
 }
