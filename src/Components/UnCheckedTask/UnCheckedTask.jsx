@@ -1,9 +1,23 @@
 import React, { useContext, useEffect, useState } from "react"
 import { AppContext } from "../../AppContext"
+import { FaCheck } from "react-icons/fa"
 
 function UnCheckedTask() {
-    const { currentList, currentUser, currentTask, setCurrentTask } =
-        useContext(AppContext)
+    useEffect(() => {
+        console.log("Unchecked render")
+        console.log("your currnt user... ", currentUser)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
+    }, [])
+
+    const {
+        currentList,
+        currentUser,
+        currentTask,
+        setCurrentTask,
+        changeTaskName,
+        checkTheTask,
+    } = useContext(AppContext)
     useEffect(() => {
         console.log("r1")
     }, [currentList])
@@ -17,11 +31,9 @@ function UnCheckedTask() {
                           <div class="input-group">
                               <div class="input-group-prepend">
                                   <div class="input-group-text">
-                                      <input
-                                          type="checkbox"
+                                      <FaCheck
                                           onClick={() => {
-                                              item.status = true
-                                              setCurrentTask(item)
+                                              checkTheTask(item)
                                           }}
                                       />
                                   </div>
@@ -31,9 +43,7 @@ function UnCheckedTask() {
                                   class="form-control"
                                   placeholder={item.task}
                                   onClick={() => setCurrentTask(item)}
-                                  onBlur={(e) =>
-                                      (currentTask.task = e.target.value)
-                                  }
+                                  onBlur={(e) => changeTaskName(e.target.value)}
                               />
                           </div>
                       )

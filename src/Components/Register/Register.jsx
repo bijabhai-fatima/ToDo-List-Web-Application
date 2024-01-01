@@ -1,11 +1,24 @@
 import { Button } from "bootstrap"
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { user, users, list } from "../../values"
 import { AppContext } from "../../AppContext"
 
 const Register = () => {
-    const { alreadyRegisterd, registerNewUser, setAlreadyRegisterd } =
-        useContext(AppContext)
+    useEffect(() => {
+        console.log("Register render")
+        console.log("your currnt user... ", currentUser)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
+    }, [])
+
+    const {
+        alreadyRegisterd,
+        registerNewUser,
+        setAlreadyRegisterd,
+        currentList,
+        currentTask,
+        currentUser,
+    } = useContext(AppContext)
 
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")

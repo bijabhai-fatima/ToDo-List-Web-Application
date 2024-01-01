@@ -3,9 +3,15 @@ import { user, users, list, item } from "./values"
 
 export const AppContext = React.createContext()
 const AppContextProvider = ({ children }) => {
+    useEffect(() => {
+        console.log("your currnt user... ", currentUser)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
+    }, [])
+
     const title = "Welcome to To-Do List"
 
-    const [currentUser, setCurrentUser] = useState()
+    const [currentUser, setCurrentUser] = useState(null)
     const [loggedIn, setLoggedIn] = useState(false)
     const [alreadyRegisterd, setAlreadyRegisterd] = useState(false)
     const [currentList, setCurrentList] = useState(null)
@@ -53,26 +59,61 @@ const AppContextProvider = ({ children }) => {
 
     const addList = () => {
         console.log("adding....")
-        console.log(currentUser)
         if (currentUser.lists) {
             currentUser.lists.push(new list("Give Name", []))
         } else {
             currentUser.lists = new Array(new list("Give Name"), [])
         }
         setCurrentList(currentUser.lists[currentUser.lists.length - 1])
-        console.log(currentUser)
+        console.log("added the list..", currentList)
+    }
+
+    const changeListName = (newName) => {
+        currentList.listName = newName
+        console.log(currentList)
     }
 
     const addTask = () => {
         console.log("adding task........")
         console.log(currentList)
+
+        const newItem = new item("New Task", false)
         if (currentList.items) {
-            currentList.items.push(new item("New Task", false))
+            currentList.items.push(newItem)
         } else {
-            currentList.items = new Array(new item("New Task", false))
+            currentList.items = new Array(newItem)
         }
-        setCurrentTask(currentList.items[currentList.items.length - 1])
-        console.log(currentList, currentTask)
+        setCurrentTask(newItem)
+        console.log("this you added.....", newItem)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
+    }
+
+    const changeTaskName = (newName) => {
+        currentTask.task = newName
+        console.log("name is changed to", newName)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
+    }
+
+    const checkTheTask = (item) => {
+        console.log(
+            "BEFORE => current task...is",
+            currentTask,
+            "and i am on",
+            item
+        )
+        item.status = true
+        console.log("i changed this.....", item)
+        setCurrentTask(item)
+        console.log("current list...is", currentList)
+        console.log("current task...is", currentTask)
+    }
+
+    const logUserOut = () => {
+        setCurrentUser(null)
+        setCurrentList(null)
+        setCurrentTask(null)
     }
 
     return (
@@ -95,6 +136,10 @@ const AppContextProvider = ({ children }) => {
                 addTask,
                 currentTask,
                 setCurrentTask,
+                changeListName,
+                changeTaskName,
+                logUserOut,
+                checkTheTask,
             }}
         >
             {children}

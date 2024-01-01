@@ -24,10 +24,18 @@ function App() {
         currentList,
         setCurrentList,
         setCurrentTask,
+        currentTask,
+        logUserOut,
     } = useContext(AppContext)
 
     const [addingList, setAddingList] = useState(false)
 
+    useEffect(() => {
+        console.log("App render")
+        console.log("your currnt user... ", currentUser)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
+    }, [])
     useEffect(() => {}, users)
 
     return (
@@ -42,23 +50,30 @@ function App() {
                     <div>
                         {currentUser.lists.map((item, index) => (
                             <div>
-                                <h4 onClick={() => setCurrentList(item)}>
+                                <h4
+                                    onClick={() => {
+                                        setCurrentList(item)
+                                        console.log(
+                                            "your currnt list...",
+                                            currentList
+                                        )
+                                        console.log(
+                                            "your current task....",
+                                            currentTask
+                                        )
+                                    }}
+                                >
                                     {item.listName}
                                 </h4>
                             </div>
                         ))}
                     </div>
                     {currentList ? <List /> : ""}
-                    <Add specifier={"list"} functionName={addList} />{" "}
+                    <Add specifier={"list"} functionName={addList} />
                     <div>
                         <button
                             className="btn btn-warning"
-                            onClick={() => {
-                                setLoggedIn(false)
-                                setCurrentList(null)
-                                setCurrentUser(null)
-                                setCurrentTask(null)
-                            }}
+                            onClick={() => logUserOut}
                         >
                             Log Out
                         </button>

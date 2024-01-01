@@ -1,11 +1,24 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { user, users, setCurrentUser } from "../../values"
 import { useState } from "react"
 import { AppContext } from "../../AppContext"
 
 function LogIn() {
-    const { loggedIn, logInTheUser, setAlreadyRegisterd } =
-        useContext(AppContext)
+    useEffect(() => {
+        console.log("LogIn render")
+        console.log("your currnt user... ", currentUser)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
+    }, [])
+
+    const {
+        loggedIn,
+        logInTheUser,
+        setAlreadyRegisterd,
+        currentList,
+        currentTask,
+        currentUser,
+    } = useContext(AppContext)
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")

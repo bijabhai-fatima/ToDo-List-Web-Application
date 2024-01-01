@@ -1,8 +1,16 @@
 import React, { useEffect, useContext } from "react"
 import { AppContext } from "../../AppContext"
+import { FaCheck } from "react-icons/fa"
 
 function CheckedTask() {
-    const { currentList, currentUser } = useContext(AppContext)
+    useEffect(() => {
+        console.log("checked render")
+        console.log("your currnt user... ", currentUser)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
+    }, [])
+
+    const { currentList, currentUser, currentTask } = useContext(AppContext)
     useEffect(() => {
         console.log("r2")
     }, [currentList])
@@ -14,7 +22,7 @@ function CheckedTask() {
                           <div class="input-group">
                               <div class="input-group-prepend">
                                   <div class="input-group-text">
-                                      <input type="checkbox" checked disabled />
+                                      <FaCheck />
                                   </div>
                               </div>
                               <del class="form-control">{item.task}</del>

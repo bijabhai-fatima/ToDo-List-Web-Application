@@ -26,9 +26,17 @@ const List = () => {
     const [addingTask, setAddingTask] = useState(false)
 
     useEffect(() => {
+        console.log("List render")
+        console.log("your currnt user... ", currentUser)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
+    }, [])
+
+    useEffect(() => {
         setTasks(currentList.items)
         console.log("rerenderd")
-        console.log(currentList)
+        console.log("your currnt list... ", currentList)
+        console.log("your current task.... ", currentTask)
     }, [currentList])
 
     const hanbleBlur = () => {
@@ -41,7 +49,17 @@ const List = () => {
         <div className="the-box">
             <div className="the-box-header">
                 <div>
-                    <IoMdArrowRoundBack onClick={() => setCurrentList(null)} />
+                    <IoMdArrowRoundBack
+                        onClick={() => {
+                            setCurrentList(null)
+                            setCurrentTask(null)
+                            console.log("your currnt list...back", currentList)
+                            console.log(
+                                "your current task....back",
+                                currentTask
+                            )
+                        }}
+                    />
                 </div>
                 <div>
                     {updatingName ? (
@@ -67,7 +85,7 @@ const List = () => {
             </div>
             <div className="the-box-content">
                 <UnCheckedTask />
-                {addingTask ? (
+                {/* {addingTask ? (
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
@@ -83,9 +101,9 @@ const List = () => {
                             }}
                         />
                     </div>
-                ) : (
-                    <Add specifier={"Task"} functionName={addTask} />
-                )}
+                ) : ( */}
+                <Add specifier={"Task"} functionName={addTask} />
+                {/* )} */}
                 <CheckedTask />
             </div>
         </div>
