@@ -1,6 +1,6 @@
 
-# ToDo-List-Web-Application
-
+# To-Do-List Web-Application
+This is a To Do List web-application built using ReactJS.
 # Result Screenshots
 ## Desktop
 ![Screenshot 2024-01-08 223403](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/9fa3a5f3-9058-432e-b943-5a4b029c7992) 
@@ -16,6 +16,10 @@
 ![Screenshot 2024-01-08 223752](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/0c78ec75-61dc-4959-b54d-a09fb031a232)
 
 ## Smartphone 
+![Screenshot 2024-01-08 224242](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/5801a438-596e-4588-83c2-1cdd1e7353ce)
+![Screenshot 2024-01-08 224150](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/87847bc9-8ffb-425d-8d4c-d1bbc6726ef8)
+![Screenshot 2024-01-08 224224](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/7d97c2fc-ba53-44fa-a43d-167f0f417e7b)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
