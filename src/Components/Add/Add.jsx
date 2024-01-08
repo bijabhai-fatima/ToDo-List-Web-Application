@@ -1,6 +1,6 @@
 import React from "react"
-import AddIcon from "../../add.png"
-import AddIcon2 from "../../add2.png"
+import AddIcon from "../../assets/add.png"
+import AddIcon2 from "../../assets/add2.png"
 import "./Add.css"
 const Add = ({ specifier, functionName }) => {
     return (

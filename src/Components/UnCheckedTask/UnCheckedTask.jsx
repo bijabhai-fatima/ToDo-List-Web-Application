@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { AppContext } from "../../AppContext"
-import { FaCheck } from "react-icons/fa"
-import checkIcon from "../../check.png"
-import deleteIcon from "../../delete.png"
+import checkIcon from "../../assets/check.png"
+import deleteIcon from "../../assets/delete.png"
 import "./UnCheckedTask.css"
 
 function UnCheckedTask() {

@@ -1,6 +1,4 @@
-import { Button } from "bootstrap"
 import React, { useContext, useState, useEffect } from "react"
-import { user, users, list } from "../../values"
 import { AppContext } from "../../AppContext"
 
 const Register = () => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react"
 import { AppContext } from "../../AppContext"
-import checkIcon from "../../check.png"
-import deleteIcon from "../../delete.png"
+import checkIcon from "../../assets/check.png"
+import deleteIcon from "../../assets/delete.png"
 import "./CheckedTask.css"
 
 function CheckedTask() {

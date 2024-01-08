@@ -1,15 +1,11 @@
-import logo from "./logo.svg"
 import "./App.css"
-import Register from "./Components/Register/Register"
-import LogIn from "./Components/LogIn/LogIn"
 import Add from "./Components/Add/Add"
-import { list } from "./values"
 import { useContext, useEffect, useState } from "react"
 import List from "./Components/List/List"
 import { AppContext } from "./AppContext"
 import Verification from "./Components/Verfication/Verification"
-import ToDoImage from "./ToDoImage.png"
-import ThreeDots from "./ThreeDots.png"
+import ToDoImage from "./assets/ToDoImage.png"
+import ThreeDots from "./assets/ThreeDots.png"
 
 function App() {
     const {

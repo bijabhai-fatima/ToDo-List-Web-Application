@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react"
-import { user, users, setCurrentUser } from "../../values"
 import { useState } from "react"
 import { AppContext } from "../../AppContext"
 
