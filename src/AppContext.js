@@ -17,6 +17,15 @@ const AppContextProvider = ({ children }) => {
     const [currentList, setCurrentList] = useState(null)
     const [currentTask, setCurrentTask] = useState(null)
 
+    const [currentIndex, setCurrentIndex] = useState(null)
+
+    const [colorVeriables, setColorVeriables] = useState([
+        "colorOne",
+        "colorTwo",
+        "colorThree",
+        "colorFour",
+    ])
+
     const checkIfAlreadyRegisterd = (email) => {
         var i = 0
         while (i < users.length) {
@@ -110,10 +119,45 @@ const AppContextProvider = ({ children }) => {
         console.log("current task...is", currentTask)
     }
 
+    const deleteTask = (item) => {
+        console.log("current task...is", currentTask)
+        console.log("deleteing.....", item)
+        var updatedList = []
+        var i = 0
+        var index
+        while (i < currentList.items.length) {
+            if (currentList.items[i] == item) {
+                console.log(
+                    "_____________found it ___________",
+                    currentList.items[i],
+                    i
+                )
+                index = i
+            } else {
+                updatedList.push(currentList.items[i])
+            }
+            i++
+        }
+        console.log("new list..", updatedList)
+        var updatedUser = currentUser
+        updatedUser.lists[currentIndex] = new list(
+            currentList.listName,
+            updatedList
+        )
+        console.log("updated user....", updatedUser)
+        setCurrentUser(updatedUser)
+
+        setCurrentList(currentUser.lists[currentIndex])
+        console.log("new list..", currentList)
+    }
+
     const logUserOut = () => {
+        console.log("------reload click")
+        setLoggedIn(false)
         setCurrentUser(null)
         setCurrentList(null)
         setCurrentTask(null)
+        setCurrentIndex(null)
     }
 
     return (
@@ -140,6 +184,10 @@ const AppContextProvider = ({ children }) => {
                 changeTaskName,
                 logUserOut,
                 checkTheTask,
+                currentIndex,
+                setCurrentIndex,
+                colorVeriables,
+                deleteTask,
             }}
         >
             {children}

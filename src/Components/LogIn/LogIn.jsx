@@ -24,39 +24,39 @@ function LogIn() {
     const [password, setPassword] = useState("")
 
     return (
-        <div>
-            {" "}
-            <form>
-                <div className="the-box-content">
-                    <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Your Email Address"
-                        onChange={(u) => setEmail(u.target.value)}
-                    />
-                    <input
-                        type="password"
-                        className="form-control"
-                        placeholder="Create Password"
-                        onChange={(u) => setPassword(u.target.value)}
-                    />
-                </div>
-                <div className="the-box-buttons">
-                    {" "}
-                    <button
-                        className="btn btn-warning"
-                        onClick={() => logInTheUser(email, password)}
-                    >
-                        LogIn
-                    </button>
-                    <button
-                        className="btn btn-primary"
-                        onClick={() => setAlreadyRegisterd(false)}
-                    >
-                        Register
-                    </button>
-                </div>
-            </form>
+        <div className="Verification-container">
+            <div className="Verification-input-feild-container">
+                <input
+                    type="email"
+                    className="Verification-input-feild"
+                    placeholder="Your Email Address"
+                    onChange={(u) => setEmail(u.target.value)}
+                />
+                <input
+                    type="password"
+                    className="Verification-input-feild"
+                    placeholder="Enter Password"
+                    onChange={(u) => setPassword(u.target.value)}
+                />
+            </div>
+            <div className="Verification-buttons-container">
+                {" "}
+                <button
+                    className="btn1 btn-logIn"
+                    onClick={() => logInTheUser(email, password)}
+                >
+                    LogIn
+                </button>
+                <small className="Verification-buttons-littletext">
+                    new user?
+                </small>
+                <button
+                    className="btn1 btn-register"
+                    onClick={() => setAlreadyRegisterd(false)}
+                >
+                    Register
+                </button>
+            </div>
         </div>
     )
 }

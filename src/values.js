@@ -15,22 +15,13 @@ export var item = function (task, status) {
     this.status = status
     return this
 }
-
 export var users = []
 
 users.push(
-    new user("Alex", "alex@gmail.com", "1234", [
+    new user("FirstUser", "firstuser@gmail.com", "1234", [
         new list("this is list ex", [
             new item("first", false),
             new item("second", false),
-        ]),
-    ])
-)
-users.push(
-    new user("Alex2", "alex2@gmail.com", "1234", [
-        new list("this is list ex2", [
-            new item("first2", false),
-            new item("second2", false),
         ]),
     ])
 )

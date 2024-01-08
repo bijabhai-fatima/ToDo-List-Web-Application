@@ -25,46 +25,44 @@ const Register = () => {
     const [password, setPassword] = useState("")
 
     return (
-        <div className="the-box">
-            {" "}
-            <form>
-                <div className="the-box-content">
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter username"
-                        onChange={(u) => setUsername(u.target.value)}
-                    />
-                    <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Your Email Address"
-                        onChange={(u) => setEmail(u.target.value)}
-                    />
-                    <input
-                        type="password"
-                        className="form-control"
-                        placeholder="Create Password"
-                        onChange={(u) => setPassword(u.target.value)}
-                    />
-                </div>
-                <div className="the-box-buttons">
-                    <button
-                        className="btn btn-primary"
-                        onClick={() =>
-                            registerNewUser(username, email, password)
-                        }
-                    >
-                        Register
-                    </button>
-                    <button
-                        className="btn btn-warning"
-                        onClick={() => setAlreadyRegisterd(true)}
-                    >
-                        Login
-                    </button>
-                </div>
-            </form>
+        <div className="Verification-container">
+            <div className="Verification-input-feild-container">
+                <input
+                    type="text"
+                    className="Verification-input-feild "
+                    placeholder="Enter username"
+                    onChange={(u) => setUsername(u.target.value)}
+                />
+                <input
+                    type="email"
+                    className="Verification-input-feild"
+                    placeholder="Your Email Address"
+                    onChange={(u) => setEmail(u.target.value)}
+                />
+                <input
+                    type="password"
+                    className="Verification-input-feild"
+                    placeholder="Create Password"
+                    onChange={(u) => setPassword(u.target.value)}
+                />
+            </div>
+            <div className="Verification-buttons-container">
+                <button
+                    className="btn1 btn-register"
+                    onClick={() => registerNewUser(username, email, password)}
+                >
+                    Register
+                </button>
+                <small className="Verification-buttons-littletext">
+                    already Registered?
+                </small>
+                <button
+                    className="btn1 btn-logIn"
+                    onClick={() => setAlreadyRegisterd(true)}
+                >
+                    Login
+                </button>
+            </div>
         </div>
     )
 }

@@ -1,0 +1,65 @@
+.checked-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.checked-icon-container {
+    background-color: #f4e9e3;
+    margin: 3px;
+}
+.checked-content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4e9e3;
+    margin: 5px;
+    border-radius: 3px;
+    height: 50px;
+}
+.checked-content-container div {
+    display: flex;
+    justify-content: space-between;
+}
+.cheked-content-delete-icon-container {
+    background: #f4e9e3;
+    margin: 7px;
+}
+.cheked-content-delete-icon-container img {
+    width: 30px;
+    height: 30px;
+}
+.cheked-content-check-icon-container {
+    background-color: #384252;
+    margin: 7px;
+}
+.cheked-content-check-icon-container img {
+    width: 30px;
+    height: 30px;
+}
+.cheked-content-text-container {
+    flex: 2;
+}
+.checked-text {
+    background: #f4e9e3;
+    padding: 5px;
+    color: #384252;
+    font-size: large;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    /* flex: 2; */
+    text-decoration: line-through;
+}
+@media screen and (max-width: 500px) {
+    .checked-text {
+        background: #f4e9e3;
+        padding: 5px;
+        color: #384252;
+        font-size: medium;
+        font-weight: 600;
+        border: none;
+        outline: none;
+        /* flex: 2; */
+        text-decoration: line-through;
+    }
+}

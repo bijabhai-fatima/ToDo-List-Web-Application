@@ -1,0 +1,48 @@
+.Add-list-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #e7e8ea;
+    border-style: solid;
+    border-width: 2px;
+    background: #384252;
+    border-radius: 10px;
+}
+.Add-list-icon-container img {
+    width: 60px;
+    height: 60px;
+    background: none;
+    margin: 10px 0;
+}
+
+.Add-task-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Add-task-icon-container div {
+    /* display: flex;
+    justify-items: center;
+    align-items: center; */
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-auto-columns: 6fr 1fr 6fr;
+    grid-auto-flow: column;
+    margin: 0 20px;
+}
+
+.Add-task-icon-container img {
+    width: 50px;
+    height: 50px;
+    background: none;
+}
+
+.The-Line {
+    height: 3px;
+    background: #25375a;
+    width: 100%;
+    margin: 5px;
+}

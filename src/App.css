@@ -1,55 +1,430 @@
 .App {
-  text-align: center;
+    background: #384252;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
+hr {
+    display: block;
+    border-width: 3px;
+    border-color: #384252;
+}
+
+.App-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App-verification_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.App--title {
+    text-align: left;
+    color: #f4e9e3;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 20px;
+    padding: 20px;
+}
+
+.App-verification-content_Image {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.App-verification-content_Image img {
+    width: 491px;
+    height: 501px;
+}
+
+.App-verification-content_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
+    width: 100%;
+}
+
+.Verification-container {
+    padding: 50px;
+}
+.Verification-input-feild-container {
+    margin: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Verification-input-feild {
+    background: #f4e9e3;
+    margin: 10px;
+    width: 348.93px;
+    height: 56.36px;
+    font-size: 20px;
+    border-radius: 8px;
+    border-color: #f4e9e3;
+    padding: 5px;
+}
+
+.Verification-buttons-container {
+    margin: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn1 {
+    margin: 10px;
+    width: 348.93px;
+    height: 56.36px;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+.btn-register {
+    background-color: #7537bd;
+    border: #7537bd;
+    color: #f4e9e3;
+}
+.btn-register:hover {
+    background-color: #5f18ab;
+}
+.btn-logIn {
+    background-color: #6fd13b;
+    border: #6fd13b;
+    color: #25375a;
+}
+.btn-logIn:hover {
+    background-color: #4cb924;
+}
+.Verification-buttons-littletext {
+    color: #f4e9e3;
+}
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.Home-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    color: #f4e9e3;
+    align-items: center;
+}
+
+.btn2 {
+    height: 50px;
+    width: 150px;
+    border-radius: 8px;
+    padding: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+.btn-logOut {
+    background-color: #e3c5b6;
+}
+.btn-logOut:hover {
+    background-color: #cba491;
+}
+
+.Home-content-container {
+    margin: auto 150px;
+    background: #384252;
+}
+.Home-content-container {
+    margin: auto 150px;
+    background: #384252;
+}
+.active {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    justify-content: space-between;
+    margin: 0 150px;
+}
+.Home-content-Lists-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 100px;
+}
+
+.Home-content-Lists-container-active {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 60px 100px;
+    margin: 10px;
+}
+.Home-content-list-box {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.Home-content-list-box-header {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.Home-content-list-box-name {
+    font-size: x-large;
+    font-weight: bold;
+    color: #384252;
+}
+.Home-content-list-box-menu-icon-container {
+    padding: 0 5px;
+}
+.Home-content-list-box-menu-icon {
+    height: 18px;
+    width: 18px;
+}
+.Home-content-list-box-small-text {
+    margin: 10px;
+    color: #384252;
+}
+
+.colorOne {
+    background: #ffaf7d;
+    border-radius: 10px;
+}
+.colorTwo {
+    background: #b7cfcc;
+    border-radius: 10px;
+}
+.colorThree {
+    background: #bd9bff;
+    border-radius: 10px;
+}
+.colorFour {
+    background: #fae58d;
+    border-radius: 10px;
+}
+
+.Home-Current-list-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    margin: 10px 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
-.App-description{
-  color: black;
-  display: inline;
+.App-description {
+    color: black;
+    display: inline;
 }
 .App-header {
-  background-color: #e7e8ea;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #e7e8ea;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .the-box {
-  background-color: #25375a;
-  margin: 2rem;
-  border-radius: 0.5rem;
-  padding: 4rem; 
+    background-color: #25375a;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    padding: 4rem;
 }
-.the-box-content{ 
-  justify-content: center;
-  padding: 2rem;
-} 
-.the-box-buttons{
-  display: inline;
+.the-box-content {
+    justify-content: center;
+    padding: 2rem;
+}
+.the-box-buttons {
+    display: inline;
+}
+
+/* ====================== MEDIA QUERIES (MEDIEM DEVICES) ========================= */
+
+@media screen and (max-width: 1024px) {
+    .App-verification-content_Image img {
+        width: 392px;
+        height: 400px;
+    }
+    .Verification-input-feild {
+        background: #f4e9e3;
+        margin: 10px;
+        width: 280px;
+        height: 56.36px;
+        font-size: 20px;
+        border-radius: 8px;
+        border-color: #f4e9e3;
+        padding: 5px;
+    }
+    .btn1 {
+        margin: 10px;
+        width: 280px;
+        height: 56.36px;
+        font-size: 20px;
+        border-radius: 8px;
+        padding: 5px;
+        font-family: sans-serif;
+        font-weight: bold;
+        transition: background-color 0.5s;
+    }
+    .Home-content-Lists-container-active {
+        display: none;
+    }
+    .Home-Current-list-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .active {
+        display: flex;
+    }
+}
+
+/* ====================== MEDIA QUERIES (MEDIAM DEVICES) ========================= */
+
+@media screen and (max-width: 850px) {
+    .App {
+        background: #384252;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 1000vh;
+    }
+    .App-verification-content_Image {
+        display: none;
+    }
+    .App--title {
+        text-align: left;
+        color: #f4e9e3;
+        font-size: 50px;
+        font-weight: bold;
+        margin: 40px 0px;
+        padding: 10px;
+    }
+    .Verification-container {
+        padding: 0px;
+    }
+    .Verification-input-feild {
+        background: #f4e9e3;
+        margin: 10px;
+        width: 280px;
+        height: auto;
+        font-size: 20px;
+        border-radius: 8px;
+        border-color: #f4e9e3;
+        padding: 5px;
+    }
+    .btn1 {
+        margin: 10px;
+        width: 280px;
+        height: auto;
+        font-size: 20px;
+        border-radius: 8px;
+        padding: 5px;
+        font-family: sans-serif;
+        font-weight: bold;
+        transition: background-color 0.5s;
+    }
+    .Home-content-Lists-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px 100px;
+    }
+    .active {
+        display: flex;
+    }
+}
+
+/* ====================== MEDIA QUERIES (MEDIAM DEVICES) ========================= */
+
+@media screen and (max-width: 500px) {
+    .App {
+        background: #384252;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 1000vh;
+    }
+    .App-verification-content_Image {
+        display: none;
+    }
+    .App--title {
+        text-align: left;
+        color: #f4e9e3;
+        font-size: 50px;
+        font-weight: bold;
+        margin: 40px 0px;
+        padding: 10px;
+    }
+    .Verification-container {
+        padding: 0px;
+    }
+    .Verification-input-feild {
+        background: #f4e9e3;
+        margin: 10px;
+        width: 280px;
+        height: auto;
+        font-size: 20px;
+        border-radius: 8px;
+        border-color: #f4e9e3;
+        padding: 5px;
+    }
+    .btn1 {
+        margin: 10px;
+        width: 280px;
+        height: auto;
+        font-size: 20px;
+        border-radius: 8px;
+        padding: 5px;
+        font-family: sans-serif;
+        font-weight: bold;
+        transition: background-color 0.5s;
+    }
+    .Home-content-Lists-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px 0px;
+    }
+    .Home-content-container {
+        margin: auto 20px;
+        background: #384252;
+    }
+    .active {
+        display: flex;
+    }
 }
