@@ -1,6 +1,21 @@
- 
+
 # ToDo-List-Web-Application
- 
+
+# Result Screenshots
+## Desktop
+![Screenshot 2024-01-08 223403](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/9fa3a5f3-9058-432e-b943-5a4b029c7992) 
+![Screenshot 2024-01-08 223345](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/99d8a6ab-b3fb-4ce0-a609-08a3c0253919)
+![Screenshot 2024-01-08 223215](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/29b4393d-7e5d-4440-9a55-57f758527cd6)
+![Screenshot 2024-01-08 223228](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/5477aa4b-c926-4df9-99e1-f27597032c98)
+![Screenshot 2024-01-08 223247](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/e0bc198a-7b7b-4ab8-a950-28a484535349)
+![Screenshot 2024-01-08 223310](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/31592dad-0fba-4aad-9160-fac339429143)
+
+## Tablet
+![Screenshot 2024-01-08 223704](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/f9a0ddf5-a96d-40ad-a646-797d1409243d)
+![Screenshot 2024-01-08 223720](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/fa20684e-ec6c-45db-8314-4766462f00a0)
+![Screenshot 2024-01-08 223752](https://github.com/bijabhai-fatima/ToDo-List-Web-Application/assets/92461731/0c78ec75-61dc-4959-b54d-a09fb031a232)
+
+## Smartphone 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
