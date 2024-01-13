@@ -26,6 +26,7 @@ const Register = () => {
         <div className="Verification-container">
             <div className="Verification-input-feild-container">
                 <input
+                    minLength={5}
                     type="text"
                     className="Verification-input-feild "
                     placeholder="Enter username"
@@ -38,6 +39,7 @@ const Register = () => {
                     onChange={(u) => setEmail(u.target.value)}
                 />
                 <input
+                    minLength={5}
                     type="password"
                     className="Verification-input-feild"
                     placeholder="Create Password"
@@ -45,12 +47,28 @@ const Register = () => {
                 />
             </div>
             <div className="Verification-buttons-container">
-                <button
-                    className="btn1 btn-register"
-                    onClick={() => registerNewUser(username, email, password)}
-                >
-                    Register
-                </button>
+                {username.length < 5 &&
+                email.length < 5 &&
+                password.length < 5 ? (
+                    <button
+                        className="btn1 btn-register"
+                        onClick={() =>
+                            registerNewUser(username, email, password)
+                        }
+                        disabled
+                    >
+                        Register
+                    </button>
+                ) : (
+                    <button
+                        className="btn1 btn-register"
+                        onClick={() =>
+                            registerNewUser(username, email, password)
+                        }
+                    >
+                        Register
+                    </button>
+                )}
                 <small className="Verification-buttons-littletext">
                     already Registered?
                 </small>

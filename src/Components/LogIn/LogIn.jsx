@@ -17,6 +17,7 @@ function LogIn() {
         currentList,
         currentTask,
         currentUser,
+        message,
     } = useContext(AppContext)
 
     const [email, setEmail] = useState("")
@@ -37,7 +38,10 @@ function LogIn() {
                     placeholder="Enter Password"
                     onChange={(u) => setPassword(u.target.value)}
                 />
+
+                <div className="Verification-buttons-littletext">{message}</div>
             </div>
+
             <div className="Verification-buttons-container">
                 {" "}
                 <button

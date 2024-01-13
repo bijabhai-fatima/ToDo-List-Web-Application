@@ -39,6 +39,11 @@ function App() {
     }, [])
     useEffect(() => {}, users)
 
+    window.onbeforeunload = (event) => {
+        console.log("unloading............")
+        logUserOut()
+    }
+
     const handleClick = ({ index, item }) => {
         setCurrentList(item)
         setCurrentIndex(index)

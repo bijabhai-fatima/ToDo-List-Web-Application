@@ -102,6 +102,9 @@ hr {
 .btn-register:hover {
     background-color: #5f18ab;
 }
+.btn-register:disabled {
+    background-color: #7537bd;
+}
 .btn-logIn {
     background-color: #6fd13b;
     border: #6fd13b;

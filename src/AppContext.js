@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { user, users, list, item } from "./values"
+import axios from "axios"
 
 export const AppContext = React.createContext()
+
 const AppContextProvider = ({ children }) => {
     useEffect(() => {
         console.log("your currnt user... ", currentUser)
@@ -18,6 +20,8 @@ const AppContextProvider = ({ children }) => {
     const [currentTask, setCurrentTask] = useState(null)
 
     const [currentIndex, setCurrentIndex] = useState(null)
+
+    const [message, setMessage] = useState("")
 
     const [colorVeriables, setColorVeriables] = useState([
         "colorOne",
@@ -37,33 +41,60 @@ const AppContextProvider = ({ children }) => {
     }
 
     const registerNewUser = (username, email, password) => {
-        console.log(username, email, password)
-        if (users.length > 0) {
-            users.push(new user(username, email, password, []))
+        // console.log(username, email, password)
+        // if (users.length > 0) {
+        //     users.push(new user(username, email, password, []))
 
-            console.log("pushed")
-            console.log(users[users.length - 1].username)
-        } else {
-            users = new Array(new user(username, email, password, []))
-        }
-        setAlreadyRegisterd(true)
+        //     console.log("pushed")
+        //     console.log(users[users.length - 1].username)
+        // } else {
+        //     users = new Array(new user(username, email, password, []))
+        // }
+        // setAlreadyRegisterd(true)
+
+        axios
+            .post("http://localhost:8000/register", {
+                username: username,
+                email: email,
+                password,
+                password,
+            })
+            .then((res) => {
+                console.log(res)
+                setAlreadyRegisterd(true)
+            })
+            .catch((error) => console.log(error))
     }
 
     const logInTheUser = (email, password) => {
-        var i = 0
-        while (i < users.length) {
-            if (users[i].email == email) {
-                if (users[i].password == password) {
-                    setLoggedIn(true)
-                    setCurrentUser(users[i])
+        axios
+            .get("http://localhost:8000/login", {
+                params: {
+                    email: email,
+                    password: password,
+                },
+            })
+            .then(function (response) {
+                const res = response.data
+                console.log(res)
+                if (res.message) {
+                    setMessage(res.message)
                 } else {
-                    console.log("Incorrect Password")
+                    console.log(typeof res.username)
+                    const _currentUser = new user(
+                        res.username,
+                        res.email,
+                        res.password,
+                        res.lists
+                    )
+                    console.log("___current", _currentUser)
+                    setCurrentUser(_currentUser)
+                    setLoggedIn(true)
                 }
-            } else {
-                console.log("Email not regietered")
-            }
-            i++
-        }
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
     }
 
     const addList = () => {
@@ -152,12 +183,20 @@ const AppContextProvider = ({ children }) => {
     }
 
     const logUserOut = () => {
-        console.log("------reload click")
+        console.log("------reload click", currentUser)
         setLoggedIn(false)
         setCurrentUser(null)
         setCurrentList(null)
         setCurrentTask(null)
         setCurrentIndex(null)
+        axios
+            .patch(`http://localhost:8000/logout/${currentUser.email}`, {
+                lists: currentUser.lists,
+            })
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((error) => console.log(error))
     }
 
     return (
@@ -183,6 +222,7 @@ const AppContextProvider = ({ children }) => {
                 changeListName,
                 changeTaskName,
                 logUserOut,
+                message,
                 checkTheTask,
                 currentIndex,
                 setCurrentIndex,
